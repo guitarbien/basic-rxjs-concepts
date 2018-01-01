@@ -1,8 +1,17 @@
 function map(transformFn) {
   const inputObservable = this;
-  const outputObservable = createObservable(function (outputObserver) {
 
+  const outputObservable = createObservable(function (outputObserver) {
+    inputObservable.subscribe({
+      next: function(x) {
+        const y = transformFn(x); // map 要做的事 (transformFn) 由外部決定
+        outputObserver.next(y);
+      },
+      error: (e) => outputObserver.error(e),
+      complete: () => outputObserver.complete(),
+    });
   });
+
   return outputObservable;
 }
 
