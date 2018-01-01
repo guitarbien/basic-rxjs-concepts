@@ -71,3 +71,9 @@ arrayObservable
   .map(x => x/10)
   .filter(x => x !== 2)
   .subscribe(observer);
+
+// mouse click event
+clickObservable
+  .map(e => e.clientX)
+  .filter(x => x < 200)
+  .subscribe(observer);
