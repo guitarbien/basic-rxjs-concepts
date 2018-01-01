@@ -40,6 +40,10 @@ function delay(period) {
   const outputObservable = createObservable(function (outputObserver) {
     inputObservable.subscribe({
       next: function(x) {
+        // delay 的時間由外部決定
+        setTimeout(function() {
+          outputObserver.next(x);
+        }, period);
       },
       error: (e) => outputObserver.error(e),
       complete: () => outputObserver.complete(),
