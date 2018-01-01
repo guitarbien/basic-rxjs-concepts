@@ -34,11 +34,27 @@ function filter(conditionFn) {
   return outputObservable;
 }
 
+function delay(period) {
+  const inputObservable = this;
+
+  const outputObservable = createObservable(function (outputObserver) {
+    inputObservable.subscribe({
+      next: function(x) {
+      },
+      error: (e) => outputObserver.error(e),
+      complete: () => outputObserver.complete(),
+    });
+  });
+
+  return outputObservable;
+}
+
 function createObservable(subscribe) {
   return {
     subscribe: subscribe,
     map: map,
     filter: filter,
+    delay: delay,
   };
 }
 
