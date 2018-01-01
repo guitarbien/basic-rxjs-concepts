@@ -1,3 +1,10 @@
+// mouse event
+const clickObservable = {
+    subscribe: function (ob) {
+        document.addEventListener('click', ob.next);
+    }
+};
+
 // array
 const arrayObservable = {
     subscribe: function (ob) {
