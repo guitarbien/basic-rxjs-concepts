@@ -1,4 +1,4 @@
-function giveMeSomeData(ob) {
+function subscribe(ob) {
     // document.addEventListener('click', ob.next); // ob.next is MouseEvent, 'click' won't fail
     // fetch(url).then(ob.next, ob.error);
     [10, 20, 30].forEach(ob.next);
@@ -19,4 +19,4 @@ const observer = {
 
 // 以 async 方式取得資料時，將資料留給 callback 處理
 // const data = giveMeSomeData( ... );
-giveMeSomeData(observer);
+subscribe(observer);
