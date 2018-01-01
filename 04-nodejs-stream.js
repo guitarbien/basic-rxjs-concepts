@@ -1,6 +1,4 @@
 function subscribe(ob) {
-    // document.addEventListener('click', ob.next); // ob.next is MouseEvent, 'click' won't fail
-    // fetch(url).then(ob.next, ob.error);
     [10, 20, 30].forEach(ob.next);
     ob.complete();
 }
