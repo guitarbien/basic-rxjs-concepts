@@ -1,6 +1,8 @@
 function map(transformFn) {
   const inputObservable = this;
-  const outputObservable = createObservable();
+  const outputObservable = createObservable(function (outputObserver) {
+
+  });
   return outputObservable;
 }
 
