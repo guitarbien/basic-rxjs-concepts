@@ -1,9 +1,13 @@
+function createObservable(subscribe) {
+  return {
+    subscribe: subscribe,
+  };
+}
+
 // mouse event
-const clickObservable = {
-  subscribe: function (ob) {
-    document.addEventListener('click', ob.next);
-  }
-};
+const clickObservable = createObservable(function (ob) {
+  document.addEventListener('click', ob.next);
+});
 
 // array
 const arrayObservable = {
