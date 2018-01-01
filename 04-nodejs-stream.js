@@ -21,6 +21,10 @@ function filter(conditionFn) {
   const outputObservable = createObservable(function (outputObserver) {
     inputObservable.subscribe({
       next: function(x) {
+        // filter condition 由外部決定
+        if (conditionFn(x)) {
+          outputObserver.next(x);
+        }
       },
       error: (e) => outputObserver.error(e),
       complete: () => outputObserver.complete(),
