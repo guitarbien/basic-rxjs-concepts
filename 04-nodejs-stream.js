@@ -1,7 +1,9 @@
-function subscribe(ob) {
-    [10, 20, 30].forEach(ob.next);
-    ob.complete();
-}
+const observable = {
+    subscribe: function (ob) {
+        [10, 20, 30].forEach(ob.next);
+        ob.complete();
+    }
+};
 
 const observer = {
     next: function nextCallback(data) {
@@ -17,4 +19,4 @@ const observer = {
 
 // 以 async 方式取得資料時，將資料留給 callback 處理
 // const data = giveMeSomeData( ... );
-subscribe(observer);
+observable.subscribe(observer);
