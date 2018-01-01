@@ -29,4 +29,6 @@ const observer = {
 
 // 以 async 方式取得資料時，將資料留給 callback 處理
 // const data = giveMeSomeData( ... );
-arrayObservable.subscribe(observer);
+arrayObservable
+  .map(x => x/10)
+  .subscribe(observer);
