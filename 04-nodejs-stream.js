@@ -49,4 +49,5 @@ const observer = {
 // const data = giveMeSomeData( ... );
 arrayObservable
   .map(x => x/10)
+  .filter(x => x !== 2)
   .subscribe(observer);
