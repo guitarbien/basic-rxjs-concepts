@@ -1,4 +1,5 @@
-const observable = {
+// array
+const arrayObservable = {
     subscribe: function (ob) {
         [10, 20, 30].forEach(ob.next);
         ob.complete();
