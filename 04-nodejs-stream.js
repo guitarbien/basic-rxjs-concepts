@@ -76,4 +76,5 @@ arrayObservable
 clickObservable
   .map(e => e.clientX)
   .filter(x => x < 200)
+  .delay(2000)
   .subscribe(observer);
