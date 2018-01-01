@@ -1,6 +1,13 @@
+function map(transformFn) {
+  const inputObservable = this;
+  const outputObservable = ?;
+  return outputObservable;
+}
+
 function createObservable(subscribe) {
   return {
     subscribe: subscribe,
+    map: map,
   };
 }
 
